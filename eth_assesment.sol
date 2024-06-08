@@ -2,7 +2,7 @@ pragma solidity 0.8.18;
 contract MyToken {
 
     // Public variables to store the details about the coin
-    string public tokken_name = "META";
+    string public tokken_name = "META_Mytokken";
     string public tokken_abbrv = "MTA";
     uint public totalSupply= 0;
 
