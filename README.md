@@ -18,30 +18,33 @@ To run this program, you can use Remix, an online Solidity IDE. To get started, 
 
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., TOKEN.sol). Copy and paste the following code into the file:
 ### CODE
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
 
-
-    // pragma solidity 0.8.18;
 contract MyToken {
-Public variables to store the details about the coin
-    string public tokken_name = "META_Mytokken";
-    string public tokken_abbrv = "MTA";
-    uint public totalSupply= 0;
 
-    // Mapping to store balances of addresses
-    mapping(address => uint ) public balances;
-
-    // Mint function to increase total supply and balance of sender address
-    function mint(address _address, uint _value) public {
-        totalSupply += _value;
-        balances[_address] += _value;
+    // public variables here
+   string public tokenName = "META";
+   string public tokenAbbr = "MTA";
+   uint public totalSupply = 0;
+    // mapping variable here
+   mapping (address => uint) public balances;
+    // mint function
+    function mint (address _address , uint _value ) public {
+      totalSupply += _value;
+      balances[_address] += _value;
     }
 
-    // Burn function to decrease total supply and balance of sender address
-    function burn(address _address, uint _value) public {
-       if (balances[_address] >= _value) {
-        totalSupply -= _value;
-        balances[_address] -= _value;
-       }}}
+    // burn function
+   function burn (address _address , uint _value )public {
+      if (balances[_address] >= _value){
+         totalSupply -= _value;
+         balances[_address] -= _value;
+      } 
+   }
+}
+
+
 
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile TOKEN.sol" button.
 
